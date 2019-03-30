@@ -1,18 +1,14 @@
 RSpec.describe Book, type: :model do
-  describe ".import" do
-    before :each do
-      create(:author, title: 'artist1', date_published: nil, unique_code: 'blah', publisher: 'mahi', user_id: 1)
-      create(:author, title: 'artist1', date_published: nil, unique_code: 'blah', publisher: 'mahi')
-    end
+  let(:user) { FactoryGirl.create(:user) }
+  # Attrbiutes title,author,date_published,unique_code,publisher
+  describe "Importing a CSV file to Book model" do
 
-    context "when facebook_url is empty" do
-      it "updates facebook_url" do
-        #Here I should somehow stub CSV with name, facebook_url
-        #headers and row: artist1,artist1_facebook_url - HOW ?
-
-        Artist.import(file)
-        expect(Artist.find_by(name: 'artist1').facebook_url).to eq "artist1_facebook_url"
-      end
+    it 'Creates the book record by loading all the css attributes and the values' do
+      file_report = FileReport.new(user_id: user.id)
+      file_report.data_file = fixture_file_upload(Rails.root + "spec/fixtures/upload.csv")
+      file_report.save
+      Book.import_records(file_report.data_file, file_report.id)
+      expect(Book.last.title).to eq('rails cook book')
     end
   end
 end
