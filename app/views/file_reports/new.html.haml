@@ -1,0 +1,5 @@
+%h3 Import Books
+= form_for @file_report, multipart: true, method: 'post'  do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.file_field :data_file
+  = f.submit 'Upload'

@@ -1,0 +1,2 @@
+module FileReportsHelper
+end

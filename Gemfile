@@ -44,6 +44,7 @@ gem 'pry'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails', '4.3.3'
 gem 'figaro', '1.1.1'
+gem 'carrierwave-aws', '1.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,6 +58,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'sextant'
+  gem "factory_bot_rails"
 end
 
 group :test do
@@ -65,6 +68,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers'
+  gem 'rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

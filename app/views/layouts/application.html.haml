@@ -7,8 +7,15 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    .container
+    %nav.navbar.main-navigation
+      .navbar-header
+        %a.navbar-brand{href: "/"} Book Explorer
+      - if user_signed_in?
+        %ul.nav-list
+          %li.nav-list-item
+            = link_to('Sign Out', destroy_user_session_path, method: :delete, class:'nav-link')
+  .container
+    %body
       %p.notice
         = notice
       %p.alert
