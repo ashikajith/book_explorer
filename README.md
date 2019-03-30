@@ -5,11 +5,14 @@ The Book model consist of following attributes
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
-  string -> "title"
-  string -> "author"
-  date   -> "date_published"
-  string -> "unique_code"
-  string -> "publisher"
+
+  | Data Type| | Columns         |
+  |          | |                 |
+  | string   | | "title"         |
+  | string   | | "author"        |
+  | date     | | "date_published"|
+  | string   | | "unique_code"   |
+  | string   | | "publisher"     |
 
 Sample of the csv file can be found in the root dir 'book1.csv', 'book2.csv'
 
