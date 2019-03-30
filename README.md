@@ -14,7 +14,7 @@ application up and running.
 | string        | unique_code    |
 | string        | publisher      |
 
-Sample of the csv file can be found in the root dir 'book1.csv', 'book2.csv'
+Sample of the csv file can be found in the root dir 'books.csv'
 
 ## Provide Env variables
 
