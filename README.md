@@ -6,18 +6,20 @@ The Book model consist of following attributes
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-  | Data Type| | Columns         |
-  |          | |                 |
-  | string   | | "title"         |
-  | string   | | "author"        |
-  | date     | | "date_published"|
-  | string   | | "unique_code"   |
-  | string   | | "publisher"     |
+| Columns       | Data Type      |
+| ------------- |:--------------:|
+| string        | title          |
+| string        | author         |
+| date          | date_published |
+| string        | unique_code    |
+| string        | publisher      |
 
 Sample of the csv file can be found in the root dir 'book1.csv', 'book2.csv'
 
 ## Provide Env variables
+
 Create a file with name 'application.yml' and fill up the values as mentioned below
+
 ```ruby
 AWS_ACCESS_KEY_ID: "xxxxxxx"
 AWS_SECRET_ACCESS_KEY: "xxxxxxx/xxxxWgxxx"
