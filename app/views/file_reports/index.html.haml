@@ -1,7 +1,8 @@
 
 %h3 Import Books
 = render 'form', file_report: @file_report
-%h3 Book List
+%br
+%h3.text-center Book List
 .media
   .media-body
     %table.table.table-hover
@@ -10,13 +11,10 @@
           %th Uploaded By
           %th File Name
           %th Status
-          %th{colspan: 2} Actions
+          %th Actions
         - @file_reports.each do |report|
           %tr
             %td= current_user.email
-            %td= File.basename report.data_file.to_s
+            %td= File.basename report.data_file.path
             %td= 'Upload Completed'
-            %td
-              =link_to "Download", '#'
-            %td
-              =link_to "View", file_report_path(report.id)
+            %td= link_to "View", file_report_path(report.id)
